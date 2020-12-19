@@ -9,8 +9,7 @@ from sqlalchemy import Column, String, Integer, Date
 from flask_migrate import Migrate
 from sqlalchemy.orm import backref
 
-database_name = "castingAgency"
-database_path = "postgres://{}/{}".format('localhost:5432', database_name)
+database_path = os.environ.get('DATABASE_URL')
 
 db = SQLAlchemy()
 
