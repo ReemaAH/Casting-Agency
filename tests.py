@@ -26,22 +26,15 @@ class CastingAgencyTestCase(unittest.TestCase):
             # create all tables
             self.db.create_all()
         
-        # # setup roles headers
-        # self.casting_assistant = {
-        #     'Authorization': 'Bearer ' + os.environ.get('ASSISTANT_TOKEN')}
-        # self.casting_director = {
-        #     'Authorization': 'Bearer ' + os.environ.get('DIRECTOR_TOKEN')}
-        # self.executive_producer = {
-        #     'Authorization': 'Bearer ' + os.environ.get('PRODUCER_TOKEN')}
-
-         # setup roles headers
+        # setup roles headers
         self.casting_assistant = {
-            'Authorization': 'Bearer ' + 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVKdkV3UmZWbW1FYnNkb1puWmVKRSJ9.eyJpc3MiOiJodHRwczovL2Nhc3RpbmctYWdlbmN5LWZzZG4udXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZGRmYzkwYmJjNGY5MDA2ZjFmNGEyMiIsImF1ZCI6ImF1dGgiLCJpYXQiOjE2MDgzODk2NjEsImV4cCI6MTYwODM5Njg2MSwiYXpwIjoid3lMZnY5QXBJT3RhU1FlN2s1b2I3M2QyN21wbjdNdVciLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.WGqhQQC8fhN9JBBnqMH1KVeow28w52qKoZee_16Rde6MJ1Om0uHu4MS39hqvWNGYr8dbLUKn9tW2U5KDcbekyJTApLKDuJRK2i-dcg0urdH833szc2UBLj4zq90zzvY57npe3mGZ2L6V4RKqqNz1gQKQ4xN0ZbEo0ql6douHxekIQBKdRySEsqZuYZPSBiwnTY_YiBB9L7-BJYrwlUr9A92hnhnKv9b0mYCJfyJ7G85_B6nLjOgh7M-KOVY1-Gi-OJ-05Vi6-6gkJy1s9-ZyTwDXpS2d4ZQTaPJZtZQNTpKzxruSVw85WafjRnuJupy42RMXXrik8FaoOds12yf7vw'}
+            'Authorization': 'Bearer ' + os.environ.get('ASSISTANT_TOKEN')}
         self.casting_director = {
-            'Authorization': 'Bearer ' + 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVKdkV3UmZWbW1FYnNkb1puWmVKRSJ9.eyJpc3MiOiJodHRwczovL2Nhc3RpbmctYWdlbmN5LWZzZG4udXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZGRlZjczZTAwYTgzMDA2ZTg4ZjNjZiIsImF1ZCI6ImF1dGgiLCJpYXQiOjE2MDgzODE2MTEsImV4cCI6MTYwODM4ODgxMSwiYXpwIjoid3lMZnY5QXBJT3RhU1FlN2s1b2I3M2QyN21wbjdNdVciLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIl19.G_QWD0xtdsgR2yP6YXpcZgYeajZRtfujSy4z48RIDgcw5zw5nQCqsmpQb3U9P3IiWg5CNzmaYQg5L5fHsbJaAEdE8hC1uur6vAHOfqBG86THSt9llQ12jPLmGYdgmMPgW8nCnG4wU3aoNiU-2sY0d1fE9NQTYa7S7nRRWTDn_BnbLyQKazES7mGdNUbCB4DKts9FbKbd78e9_5vbp_FBDFaxb7XO5knoV9Q3y5tklU2d7_3B3n3Eb0H0xtToY5el98F-wZ3lWvgAH0XM-2d8sTuHHp4Cxj-44Mi2gpRz-V7ffFX8Ip7FO2qhJPsezOf3Of1V2TmOXpUaGh1V7-PsWQ'}
+            'Authorization': 'Bearer ' + os.environ.get('DIRECTOR_TOKEN')}
         self.executive_producer = {
-            'Authorization': 'Bearer ' + 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImVKdkV3UmZWbW1FYnNkb1puWmVKRSJ9.eyJpc3MiOiJodHRwczovL2Nhc3RpbmctYWdlbmN5LWZzZG4udXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmZGRlZmI3NDUyMjY4MDA3NTU5ZDBiOCIsImF1ZCI6ImF1dGgiLCJpYXQiOjE2MDgzODk5NDYsImV4cCI6MTYwODM5NzE0NiwiYXpwIjoid3lMZnY5QXBJT3RhU1FlN2s1b2I3M2QyN21wbjdNdVciLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.q2P15G6Qx6k2ajltbOWvnVbWbYbUnY-rkZvWQ5fzWYikyScxHeE0wfBNOK7NLf554B7f_HS4LpmDgrM8CuW7QMU_NoyHicysBYz8N2YP9-1TRxCmF3iEV8ocDvFAQb2cX2wmtOw_rrFvHIB3LWhpNJwzQYau0MtV-3WFKJM6KL57Y7dhH9jTd2ySJvXhh3EAr08OCfO4IpDFNa_KVmDAYvc754QCAeCB8k1X1-9MN7leb9s8Say9wriU-muE1B026alpF40fMqeFfaqmNBjkYePE9SXmVPyXUVkDNGvKiN-15Ecq-_Bv2QLZKWFWQpykgEYpVNvhNt9LO7Nv2xA7YQ'}
+            'Authorization': 'Bearer ' + os.environ.get('PRODUCER_TOKEN')}
 
+    
 
 
 
