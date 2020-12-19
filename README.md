@@ -12,7 +12,7 @@ There are three types of roles and they are:
 ## Getting Started
 ### URLs
 - Locally: http://127.0.0.1:5000/
-- Heroku:
+- Heroku: https://casting-agency-reema-ah.herokuapp.com/
 
 ### for running the server locally:
 
@@ -59,7 +59,7 @@ This will install all of the required packages within the requirements.txt file.
     - Executive Producer:
        Can perform all actions
 
-#### Run the server locally:
+### 5. Run the server locally:
 
 - Create a local database using postgresql, run the following:
     - ``` createdb castingAgency ```
@@ -68,12 +68,15 @@ This will install all of the required packages within the requirements.txt file.
 - Export the flask app by running:
 ``` export FLASK_APP=app.py; ```
 
+- Fill the environment variables in ``` setup.sh ``` file and run the file 
+
 - Run the app using this command:
 ```flask run ```
 
-## Test
+### 6. Run unit test
 To run the unittest please run the following: 
 ``` python test_app.py ``` 
+
 
 ## Error Handling
 Errors are returned as JSON objects in the following format:
