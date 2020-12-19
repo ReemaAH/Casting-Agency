@@ -40,14 +40,14 @@ This will install all of the required packages within the requirements.txt file.
     - Enable RBAC
     - Enable Add Permissions in the Access Token
 5. Create new API permissions:
-    a. get:actors
-    b. get:movies
-    c. delete:actors
-    d. delete:movies
-    e. post:actors
-    f. post:movies
-    g. patch:actors
-    h. patch:movies
+    - get:actors
+    - get:movies
+    - delete:actors
+    - delete:movies
+    - post:actors
+    - post:movies
+    - patch:actors
+    - patch:movies
 
 6. Create new roles for:
     - Casting Assistant:
