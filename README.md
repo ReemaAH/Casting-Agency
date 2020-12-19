@@ -1,9 +1,9 @@
 # Casting-Agency Project
 
 ## Introduction
-The final project in Udacity full-stack developer Nanodegree,
+This is the final project in Udacity full-stack developer Nanodegree.
 The idea of this project is to create a Casting Agency app that is responsible for creating movies and managing and assigning actors to those movies. Authorized users can interact with the API to view,add,update,delete Movies and Actors.
-There are three types of roles and they are:
+There are three types of roles in the app, and they are:
     1. Casting Assistant
     2. Casting Director
     3. Casting Director
@@ -59,6 +59,7 @@ This will install all of the required packages within the requirements.txt file.
     - Executive Producer:
        Can perform all actions
 
+
 ### 5. Run the server locally:
 
 - Create a local database using postgresql, run the following:
@@ -76,6 +77,12 @@ This will install all of the required packages within the requirements.txt file.
 ### 6. Run unit test
 To run the unittest please run the following: 
 ``` python test_app.py ``` 
+
+
+### 7. Go to your login providee by auth0 by accessign the follwoing URI:
+    - https://<AUTH0_DOMAIN>/authorize?audience=<API_AUDIENCE>&response_type=token&client_id=<CLIENT_ID>redirect_uri=http://localhost:5000/
+
+    - Copy the token to add it as environment variable when accessing the endpoints later.
 
 
 ## Error Handling
