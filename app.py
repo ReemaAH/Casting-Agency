@@ -230,4 +230,11 @@ def create_app(test_config=None):
 
   return app
 
+app = create_app()
+
+# Default port:
+if __name__ == '__main__':
+    app.debug = True
+    app.run()
+
     
