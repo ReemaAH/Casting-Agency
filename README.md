@@ -30,7 +30,7 @@ Install dependencies by running:
 This will install all of the required packages within the requirements.txt file.
 
 
-### 4. Setup Authentication in Auth0: 
+#### 4. Setup Authentication in Auth0: 
 
 1. Create a new Auth0 Account
 2. Select a unique tenant domain
@@ -40,14 +40,14 @@ This will install all of the required packages within the requirements.txt file.
     - Enable RBAC
     - Enable Add Permissions in the Access Token
 5. Create new API permissions:
-    1. get:actors
-    2. get:movies
-    3. delete:actors
-    4. delete:movies
-    5. post:actors
-    6. post:movies
-    7. patch:actors
-    8. patch:movies
+    a. get:actors
+    b. get:movies
+    c. delete:actors
+    d. delete:movies
+    e. post:actors
+    f. post:movies
+    g. patch:actors
+    h. patch:movies
 
 6. Create new roles for:
     - Casting Assistant:
@@ -60,7 +60,7 @@ This will install all of the required packages within the requirements.txt file.
        Can perform all actions
 
 
-### 5. Run the server locally:
+#### 5. Run the server locally:
 
 - Create a local database using postgresql, run the following:
     - ``` createdb castingAgency ```
@@ -74,12 +74,12 @@ This will install all of the required packages within the requirements.txt file.
 - Run the app using this command:
 ```flask run ```
 
-### 6. Run unit test
+#### 6. Run unit test
 To run the unittest please run the following: 
 ``` python test_app.py ``` 
 
 
-### 7. Go to your login providee by auth0 by accessign the follwoing URI:
+#### 7. Go to your login providee by auth0 by accessign the follwoing URI:
     - https://<AUTH0_DOMAIN>/authorize?audience=<API_AUDIENCE>&response_type=token&client_id=<CLIENT_ID>redirect_uri=http://localhost:5000/
 
     - Copy the token to add it as environment variable when accessing the endpoints later.
