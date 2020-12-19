@@ -3,6 +3,7 @@
 # Models section
 #----------------------------------------------------------------------------#
 
+import os
 import json
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, String, Integer, Date
