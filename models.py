@@ -12,7 +12,7 @@ from sqlalchemy.orm import backref
 
 database_path = os.environ.get('DATABASE_URL')
 
-db = SQLAlchemy()
+db = SQLAlchemy() 
 
 
 def setup_db(app, database_path=database_path):
