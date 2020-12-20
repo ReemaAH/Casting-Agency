@@ -45,7 +45,7 @@ def create_app(test_config=None):
 
     @app.route('/movies')
     @requires_auth('get:movies')
-    # this endpoint is to get all movies in DB
+    # this endpoint is to get all movies
     def get_movies(payload):
         movies = Movie.query.all()
         if len(movies) == 0:
