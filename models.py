@@ -1,7 +1,7 @@
 
-#----------------------------------------------------------------------------#
+# ----------------------------------------------------------------------------#
 # Models section
-#----------------------------------------------------------------------------#
+# ----------------------------------------------------------------------------#
 
 import os
 import json
@@ -12,7 +12,7 @@ from sqlalchemy.orm import backref
 
 database_path = os.environ.get('DATABASE_URL')
 
-db = SQLAlchemy() 
+db = SQLAlchemy()
 
 
 def setup_db(app, database_path=database_path):
@@ -22,9 +22,11 @@ def setup_db(app, database_path=database_path):
     db.init_app(app)
     db.create_all()
 
+
 def db_drop_and_create_all():
     db.drop_all()
     db.create_all()
+
 
 class Movie(db.Model):
     """
@@ -55,7 +57,7 @@ class Movie(db.Model):
     def insert(self):
         db.session.add(self)
         db.session.commit()
-  
+
     def update(self):
         db.session.commit()
 
@@ -65,11 +67,10 @@ class Movie(db.Model):
 
     def format(self):
         return {
-        'id': self.id,
-        'title': self.title,
-        'release_date': self.release_date,
-        }
-
+            'id': self.id,
+            'title': self.title,
+            'release_date': self.release_date
+            }
 
 
 class Actor(db.Model):
@@ -104,7 +105,7 @@ class Actor(db.Model):
     def insert(self):
         db.session.add(self)
         db.session.commit()
-  
+
     def update(self):
         db.session.commit()
 
@@ -114,9 +115,8 @@ class Actor(db.Model):
 
     def format(self):
         return {
-        'id': self.id,
-        'name': self.name,
-        'age': self.age,
-        'gender': self.gender,
-        }
-
+            'id': self.id,
+            'name': self.name,
+            'age': self.age,
+            'gender': self.gender,
+            }

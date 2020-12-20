@@ -1,7 +1,7 @@
 # Casting-Agency Project
 
-## Introduction
-This is the final project in Udacity full-stack developer Nanodegree.
+## Motivation
+This is my capstone xproject in Udacity full-stack developer Nanodegree.
 The idea of this project is to create a Casting Agency app that is responsible for creating movies and managing and assigning actors to those movies. Authorized users can interact with the API to view,add,update,delete Movies and Actors.
 There are three types of roles in the app, and they are:
     1. Casting Assistant
