@@ -90,12 +90,12 @@ def create_app(test_config=None):
     # this endpoint it to create a new obj
     # from post data
     def create_actor(payload):
-        # validation
-        if 'name' in request.get_json() and 'age' in request.get_json() \
+      # validation
+      if 'name' in request.get_json() and 'age' in request.get_json() \
          and 'gender' in request.get_json():
-            name = request.get_json()['name']
-            age = request.get_json()['age']
-            gender = request.get_json()['gender']
+        name = request.get_json()['name']
+        age = request.get_json()['age']
+        gender = request.get_json()['gender']
 
         new_actor = Actor(
             name=name,
@@ -107,19 +107,19 @@ def create_app(test_config=None):
             'success': True,
             'created': new_actor.id
             })
-        else:
-            abort(422)
+      else:
+          abort(422)
 
     @app.route("/movies", methods=['POST'])
     @requires_auth('post:movies')
     # this endpoint it to create a new obj
     # from post data
     def create_movie(payload):
-        # validation
-        if 'title' in request.get_json() \
-           and 'release_date' in request.get_json():
-            title = request.get_json()['title']
-            release_date = request.get_json()['release_date']
+      # validation
+      if 'title' in request.get_json() \
+         and 'release_date' in request.get_json():
+        title = request.get_json()['title']
+        release_date = request.get_json()['release_date']
 
         new_movie = Movie(
             title=title,
@@ -130,7 +130,7 @@ def create_app(test_config=None):
             'success': True,
             'created': new_movie.id
             })
-        else:
+      else:
             abort(422)
 
     @app.route('/actors/<int:actor_id>', methods=['PATCH'])
